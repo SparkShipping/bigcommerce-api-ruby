@@ -306,10 +306,11 @@ module Bigcommerce
     end
 
     def products(options={})
-      if (!options["resource_class"])
-        options["resource_class"] = Product
-      end
-      collection("/products", options)
+      #if (!options["resource_class"])
+      #  options["resource_class"] = Product
+      #end
+      #collection("/products", options)
+      @connection.get("/products", options)
     end
 
     def products_count
