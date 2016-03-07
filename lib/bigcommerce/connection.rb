@@ -38,7 +38,7 @@ module Bigcommerce
       @configuration[:oauth_token] = oauth_token
     end
 
-    def verify_peer=(verify)
+    def verify_ssl=(verify)
       @configuration[:verify_ssl] = verify
     end
 
