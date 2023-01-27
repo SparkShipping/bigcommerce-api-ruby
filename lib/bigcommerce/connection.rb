@@ -83,8 +83,8 @@ module Bigcommerce
     end
 
     def request_oauth(method, path, options,headers={})
-
-      site = "https://api.bigcommerce.com/stores/#{@configuration[:store_hash]}/v2"
+      version = options.delete(:version) || 'v2'
+      site = "https://api.bigcommerce.com/stores/#{@configuration[:store_hash]}/#{version}"
       client = OAuth2::Client.new(@configuration[:oauth_client_id], @configuration[:oauth_client_secret], site: site)
       token = OAuth2::AccessToken.new(client, @configuration[:oauth_token])
 
@@ -120,12 +120,13 @@ module Bigcommerce
     end
 
     def request_api_user(method, path, options,headers={})
+      version = options.delete(:version) || 'v2'
       resource_options = {
         :user => @configuration[:username],
         :password => @configuration[:api_key],
         :headers => headers
       }
-      restclient = RestClient::Resource.new "#{@configuration[:store_url]}/api/v2#{path}.json", resource_options
+      restclient = RestClient::Resource.new "#{@configuration[:store_url]}/api/#{version}#{path}.json", resource_options
       if @configuration[:ssl_client_key] && @configuration[:ssl_client_cert] && @configuration[:ssl_ca_file]
         restclient = RestClient::Resource.new(
           "#{@configuration[:store_url]}/api/v2#{path}.json",

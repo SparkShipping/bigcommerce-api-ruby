@@ -457,6 +457,11 @@ module Bigcommerce
       @connection.get("/store", options)
     end
 
+    # v3 api call
+    def create_product_metafields(product_id, options)
+      @connection.put("/catalog/products/#{product_id}/metafields", options.merge(version: 'v3'))
+    end
+
     def count(result)
       result["count"]
     end
