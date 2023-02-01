@@ -457,9 +457,22 @@ module Bigcommerce
       @connection.get("/store", options)
     end
 
-    # v3 api call
-    def create_product_metafields(product_id, options)
+    # v3 api calls
+
+    def products_metafields(product_id, options={})
+      @connection.get("/catalog/products/#{product_id}/metafields/#{metafield_id}", options.merge(version: 'v3'))
+    end
+
+    def create_products_metafields(product_id, options={})
       @connection.post("/catalog/products/#{product_id}/metafields", options.merge(version: 'v3'))
+    end
+
+    def products_metafield(product_id, metafield_id, options={})
+      @connection.get("/catalog/products/#{product_id}/metafields/#{metafield_id}", options.merge(version: 'v3'))
+    end
+
+    def update_products_metafield(product_id, metafield_id, options={})
+      @connection.put("/catalog/products/#{product_id}/metafields/#{metafield_id}", options.merge(version: 'v3'))
     end
 
     def count(result)
