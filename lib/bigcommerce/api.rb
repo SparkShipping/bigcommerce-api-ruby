@@ -460,7 +460,7 @@ module Bigcommerce
     # v3 api calls
 
     def products_metafields(product_id, options={})
-      @connection.get("/catalog/products/#{product_id}/metafields/#{metafield_id}", options.merge(version: 'v3'))
+      @connection.get("/catalog/products/#{product_id}/metafields", options.merge(version: 'v3'))
     end
 
     def create_products_metafields(product_id, options={})
