@@ -459,20 +459,44 @@ module Bigcommerce
 
     # v3 api calls
 
-    def products_metafields(product_id, options={})
+    def product_metafields(product_id, options={})
       @connection.get("/catalog/products/#{product_id}/metafields", options.merge(version: 'v3'))
     end
 
-    def create_products_metafields(product_id, options={})
+    def create_product_metafields(product_id, options={})
       @connection.post("/catalog/products/#{product_id}/metafields", options.merge(version: 'v3'))
     end
 
-    def products_metafield(product_id, metafield_id, options={})
+    def product_metafield(product_id, metafield_id, options={})
       @connection.get("/catalog/products/#{product_id}/metafields/#{metafield_id}", options.merge(version: 'v3'))
     end
 
     def update_products_metafield(product_id, metafield_id, options={})
       @connection.put("/catalog/products/#{product_id}/metafields/#{metafield_id}", options.merge(version: 'v3'))
+    end
+
+    def delete_product_metafield(product_id, metafield_id, options={})
+      @connection.delete("/catalog/products/#{product_id}/metafields/#{metafield_id}", options.merge(version: 'v3'))
+    end
+
+    def product_variant_metafields(product_id, variant_id, options={})
+      @connection.get("/catalog/products/#{product_id}/variants/#{variant_id}/metafields", options.merge(version: 'v3'))
+    end
+
+    def create_product_variant_metafields(product_id, variant_id,  options={})
+      @connection.post("/catalog/products/#{product_id}/variants/#{variant_id}/metafields", options.merge(version: 'v3'))
+    end
+
+    def product_variant_metafield(product_id, variant_id, metafield_id, options={})
+      @connection.get("/catalog/products/#{product_id}/variants/#{variant_id}/metafields/#{metafield_id}", options.merge(version: 'v3'))
+    end
+
+    def update_product_variant_metafield(product_id, variant_id, metafield_id, options={})
+      @connection.put("/catalog/products/#{product_id}/variants/#{variant_id}/metafields/#{metafield_id}", options.merge(version: 'v3'))
+    end
+
+    def delete_product_variant_metafield(product_id, variant_id, metafield_id, options={})
+      @connection.delete("/catalog/products/#{product_id}/variants/#{variant_id}/metafields/#{metafield_id}", options.merge(version: 'v3'))
     end
 
     def count(result)
