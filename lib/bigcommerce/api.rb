@@ -471,7 +471,7 @@ module Bigcommerce
       @connection.get("/catalog/products/#{product_id}/metafields/#{metafield_id}", options.merge(version: 'v3'))
     end
 
-    def update_products_metafield(product_id, metafield_id, options={})
+    def update_product_metafield(product_id, metafield_id, options={})
       @connection.put("/catalog/products/#{product_id}/metafields/#{metafield_id}", options.merge(version: 'v3'))
     end
 
