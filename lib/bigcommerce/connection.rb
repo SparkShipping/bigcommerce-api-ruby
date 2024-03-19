@@ -110,10 +110,10 @@ module Bigcommerce
                      token.delete(path, {:headers => headers})
                  end
 
-      @remaining_rate_limit = response.headers[:x_bc_apilimit_remaining]
+      @remaining_rate_limit = response&.headers[:x_bc_apilimit_remaining]
 
       if((200..201) === response.status)
-        JSON.parse response.body
+          response.body.present? ? JSON.parse(response) : {}
       elsif response.status == 204
         {}
       end
@@ -148,9 +148,11 @@ module Bigcommerce
                    when :delete then
                      restclient.delete
                    end
-        @remaining_rate_limit = response.headers[:x_bc_apilimit_remaining]
+
+        @remaining_rate_limit = response&.headers[:x_bc_apilimit_remaining]
+
         if((200..201) === response.code)
-          JSON.parse response
+          response.body.present? ? JSON.parse(response) : {}
         elsif response.code == 204
           {}
         end
