@@ -113,7 +113,7 @@ module Bigcommerce
       @remaining_rate_limit = response&.headers[:x_bc_apilimit_remaining]
 
       if((200..201) === response.status)
-          response.body.present? ? JSON.parse(response) : {}
+          response.body.present? ? JSON.parse(response.body) : {}
       elsif response.status == 204
         {}
       end
@@ -152,7 +152,7 @@ module Bigcommerce
         @remaining_rate_limit = response&.headers[:x_bc_apilimit_remaining]
 
         if((200..201) === response.code)
-          response.body.present? ? JSON.parse(response) : {}
+          response.body.present? ? JSON.parse(response.body) : {}
         elsif response.code == 204
           {}
         end
