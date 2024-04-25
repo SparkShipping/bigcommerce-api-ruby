@@ -1,6 +1,6 @@
 module Bigcommerce
   major = 0
-  minor = 18
+  minor = 19
   patch = 0
   VERSION = [major, minor, patch].join('.') unless defined? Bigcommerce::VERSION
 end
