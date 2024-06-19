@@ -511,6 +511,22 @@ module Bigcommerce
       @connection.delete("/catalog/products/#{product_id}/variants/#{variant_id}/metafields/#{metafield_id}", options.merge(version: 'v3'))
     end
 
+    def product_custom_field(product_id, custom_field_id, options={})
+      @connection.get("/catalog/products/#{product_id}/custom-fields/#{custom_field_id}", options.merge(version: 'v3'))
+    end
+
+    def product_custom_fields(product_id, options={})
+      @connection.get("/catalog/products/#{product_id}/custom-fields", options.merge(version: 'v3'))
+    end
+
+    def create_product_custom_fields(product_id, options={})
+      @connection.post("/catalog/products/#{product_id}/custom-fields", options.merge(version: 'v3'))
+    end
+
+    def delete_product_custom_field(product_id, custom_field_id, options={})
+      @connection.delete("/catalog/products/#{product_id}/custom-fields/#{custom_field_id}", options.merge(version: 'v3'))
+    end
+
     def count(result)
       result["count"]
     end
