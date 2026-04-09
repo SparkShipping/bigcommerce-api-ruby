@@ -24,7 +24,7 @@ http_interactions:
       - Mon, 22 Apr 2013 10:18:49 GMT
       Server:
       - Apache
-      X-Bc-Apilimit-Remaining:
+      X-Rate-Limit-Requests-Left:
       - '19996'
       X-Bc-Store-Version:
       - 7.5.19
