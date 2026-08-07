@@ -1,9 +1,9 @@
 # -*- encoding: utf-8 -*-
-# stub: bigcommerce 0.9.0 ruby lib
+# stub: bigcommerce 0.21.0 ruby lib
 
 Gem::Specification.new do |s|
   s.name = "bigcommerce"
-  s.version = "0.19.0"
+  s.version = "0.21.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Mark Rickerby", "Rob Howard", "Saranyan Vigraham", "Sasha Gerrand"]
@@ -24,7 +24,7 @@ Gem::Specification.new do |s|
       s.add_runtime_dependency(%q<activesupport>, [">= 0"])
       s.add_runtime_dependency(%q<json>, [">= 0"])
       s.add_runtime_dependency(%q<rest-client>, [">= 0"])
-      s.add_runtime_dependency(%q<oauth2>, [">= 0"])
+      s.add_runtime_dependency(%q<oauth2>, [">= 2.0.22"])
       s.add_development_dependency(%q<coveralls>, [">= 0"])
       s.add_development_dependency(%q<ci_reporter>, [">= 0"])
       s.add_development_dependency(%q<mocha>, [">= 0"])
@@ -36,7 +36,7 @@ Gem::Specification.new do |s|
       s.add_dependency(%q<activesupport>, [">= 0"])
       s.add_dependency(%q<json>, [">= 0"])
       s.add_dependency(%q<rest-client>, [">= 0"])
-      s.add_dependency(%q<oauth2>, [">= 0"])
+      s.add_dependency(%q<oauth2>, [">= 2.0.22"])
       s.add_dependency(%q<coveralls>, [">= 0"])
       s.add_dependency(%q<ci_reporter>, [">= 0"])
       s.add_dependency(%q<mocha>, [">= 0"])
@@ -49,7 +49,7 @@ Gem::Specification.new do |s|
     s.add_dependency(%q<activesupport>, [">= 0"])
     s.add_dependency(%q<json>, [">= 0"])
     s.add_dependency(%q<rest-client>, [">= 0"])
-    s.add_dependency(%q<oauth2>, [">= 0"])
+    s.add_dependency(%q<oauth2>, [">= 2.0.22"])
     s.add_dependency(%q<coveralls>, [">= 0"])
     s.add_dependency(%q<ci_reporter>, [">= 0"])
     s.add_dependency(%q<mocha>, [">= 0"])
